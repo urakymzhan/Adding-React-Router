@@ -370,7 +370,7 @@ function PLACESDetails(props) {
   return (
     <div>
       <div>
-        <img src={`${process.env.PUBLIC_URL}images/${images[0]}`} />
+        <img src={`${process.env.PUBLIC_URL}/images/${images[0]}`} />
       </div>
 
       <div>
