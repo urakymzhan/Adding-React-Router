@@ -352,9 +352,11 @@ The goal then is to pass the index to the `PLACESDetails` component, and `PLACES
 // src/PLACESDetails.js
 
 import data from "./places-data.json";
+import {useParams} from 'react-router-dom';
+...
 
 function PLACESDetails(props) {
-  const { id } = props.match.params; // Location index
+  const { id } = useParams(); // Location index
   const { images, title, desc, hours, features, geo } = data[id];
 
   return (
@@ -379,11 +381,11 @@ function PLACESDetails(props) {
 export default PLACESDetails;
 ```
 
-The code above is just like the other components you've made. One small change is at the top you've imported `sfPLACES-data.js`.
+The code above is just like the other components you've made. One small change is at the top you've imported `PLACES-data.js`.
 
-Inside the function you defined a variable: `id` and set the value to `props.match.params`.
+Inside the function you defined a variable: `id` and set the value to `useParams()`.
 
-`const { id } = props.match.params // Location index`
+`const { id } = useParams() // Location index`
 
 On the next line you're using the `id` to get the data for the location at the index. Using deconstruction we can break object at that index down into: `images`, `title`, `desc`, `hours`, `features`, and `geo` coordinates.
 
